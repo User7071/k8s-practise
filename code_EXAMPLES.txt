@@ -1,0 +1,23 @@
+------Tags for EC2
+aws ec2 create-tags --resources i-09197fb1d2bfb76c3 i-0456ffe7b31843b73 i-0456ffe7b31843b73 --tags Key=Owner,Value=dkolegaev Key=Discipline,Value=AM Key=Purpose,Value=Practicing_in_EKS
+
+#Tags for LoadBalancer
+aws elb add-tags --load-balancer-names a1d05c061be4c4fef9d0f6f515aebb04 --tags Key=Owner,Value=dkolegaev Key=Discipline,Value=AM Key=Purpose,Value=Practicing_in_EKS
+
+$Tags for EKS
+aws eks tag-resource --resource-arn 'arn:aws:eks:eu-central-1:315727832121:cluster/myekscluster7' --tags Owner=dkolegaev,Discipline=AM,Purpose=Practicing_in_EKS
+
+aws add-tags-to-resource --resource-type cloudformation --resource-id 'arn:aws:cloudformation:eu-central-1:315727832121:stack/eksctl-myekscluster7-cluster/02be2af0-71fb-11ec-b158-0a72f6f2c428' `
+--tags Owner=dkolegaev,Discipline=AM,Purpose=Practicing_in_EKS
+
+------------------------------------------------------------------------------
+
+------GIT COMMANDS
+
+Delete your local branch: git branch -d local_branch
+
+Fetch the latest remote branch: git fetch origin remote_branch
+
+Rebuild the local branch based on the remote one:
+
+git checkout -b local_branch origin/remote_branch
